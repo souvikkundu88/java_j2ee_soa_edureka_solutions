@@ -16,6 +16,7 @@ public class declaringArrays {
 		char charArr2[] = {'A', 'B', 'C', 'D'};
 		System.out.println(charArr2.length);
 		System.out.println(arr1.length);
+		System.out.println("hello world");
 	}
 
 }
