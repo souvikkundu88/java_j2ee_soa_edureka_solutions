@@ -62,7 +62,7 @@ public class studentReportCard {
 		System.out.println("Name: " + studentName);
 		System.out.println("-------------------------------------------------------");
 		System.out.println(" Subjects \t\t Marks");
-		int total = 0; // declaring int variable total to store total marks
+		int total = 0; // declaring integer variable 'total' to store total marks
 		for (int i = 0; i < marks.length; i++) {
 			System.out.println("Subject")
 		}
