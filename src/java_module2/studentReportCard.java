@@ -31,12 +31,12 @@ public class studentReportCard {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter student name: ");
+		System.out.println("Enter student name: "); // asking user to input student name
 		String studentName = sc.nextLine();
-		System.out.println("Enter number of subjects: ");
+		System.out.println("Enter number of subjects: "); // asking user to input total number of subjects
 		int numberOfSubjects = sc.nextInt();
 		sc.close();
-		int[] marks = new int[numberOfSubjects];
+		int[] marks = new int[numberOfSubjects]; // total number of subjects assigned to array marks
 		marksEntry(marks); // method for marksEntry()
 		printReportCard(studentName, marks, numberOfSubjects); // method for printReportCard()
 	}
@@ -60,7 +60,7 @@ public class studentReportCard {
 		System.out.println(" Subjects \t\t Marks");
 		int total = 0;
 		for (int i = 0; i < marks.length; i++) {
-			Sca
+			System.out.println("Subject")
 		}
 		
 	}
