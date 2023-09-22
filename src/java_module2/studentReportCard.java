@@ -12,13 +12,13 @@ printReportCard()
 			    Report Card
 	Name: xxxxxxx
 	--------------------------------------------
-	Subject					Marks
+	Subjects				   Marks
 	Subject-1					xx
 	Subject-2					xx
 	Subject-3					xx
 	Subject-n					xx
 	--------------------------------------------
-	Total: xx				  	Average: xx
+	Total: xx				   Average: xx
  
 */
 
@@ -35,19 +35,30 @@ public class studentReportCard {
 		String studentName = sc.nextLine();
 		System.out.println("Enter number of subjects: ");
 		int numberOfSubjects = sc.nextInt();
+		sc.close();
 		int[] marks = new int[numberOfSubjects];
-		marksEntry();
-		printReportCard();
+		marksEntry(marks); // method for marksEntry()
+		printReportCard(studentName, marks, numberOfSubjects); // method for printReportCard()
 	}
 	
+	/* method definition for getting marks from the user */
 	static void marksEntry(int[] marks) {
 		for(int i = 0; i < marks.length; i++) {
+			Scanner scMarks = new Scanner(System.in);
 			System.out.println("Enter marks for subject- " +(i+1) + ": ");
-			marks[i] = sc.nextInt();
+			marks[i] = scMarks.nextInt();
+			scMarks.close();
 		}
 	}
 	
-	public static void printReportCard() {
+	/* method definition for printing report card */
+	static void printReportCard(String studentName, int[] marks, int numberOfSubjects) {
+		System.out.println("\n-----------------------------------------------------");
+		System.out.println("\t\tReport Card");
+		System.out.println("Name: " + studentName);
+		System.out.println("-------------------------------------------------------");
+		System.out.println(" Subjects \t\t Marks");
+		System
 		
 	}
 
