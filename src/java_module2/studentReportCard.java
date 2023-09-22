@@ -44,7 +44,7 @@ public class studentReportCard {
 	// now, I have to collect each marks in each subject and store it in array marks
 	
 	/* method definition for getting marks from the user and storing it in array marks */
-	static void marksEntry(int[] marks) {
+	static void marksEntry(int[] marks) { // this method is for asking user input
 		for(int i = 0; i < marks.length; i++) {
 			Scanner scMarks = new Scanner(System.in);
 			System.out.println("Enter marks for subject- " +(i+1) + ": "); // asking user to enter each marks
@@ -56,17 +56,22 @@ public class studentReportCard {
 	// now, calculate total marks, average, and print the report card
 	
 	/* method definition for total, average, and printing report card */
-	static void printReportCard(String studentName, int[] marks, int numberOfSubjects) {
+	static void printReportCard(String studentName, int[] marks, int numberOfSubjects) { // method: print report card
+		int total = 0; // declaring integer variable 'total' to store total marks;
+		float avg = 0; // declaring float variable 'avg' to store average marks
 		System.out.println("\n-----------------------------------------------------");
 		System.out.println("\t\tReport Card");
 		System.out.println("Name: " + studentName);
 		System.out.println("-------------------------------------------------------");
 		System.out.println(" Subjects \t\t Marks");
-		int total = 0; // declaring integer variable 'total' to store total marks
-		for (int i = 0; i < marks.length; i++) {
-			System.out.println("Subject")
-		}
 		
+		for (int i = 0; i < marks.length; i++) {
+			System.out.println("Subject-" + (i+1) + "\t\t" + marks[i]);
+			total = total + marks[i]; // calculating total marks
+		}
+		avg = ((float) total) / numberOfSubjects; // calculating average marks
+		System.out.println("-------------------------------------------------------");
+		System.out.printf("Total: %d \t Average: %.2f\n", total, avg);
 	}
 
 }
