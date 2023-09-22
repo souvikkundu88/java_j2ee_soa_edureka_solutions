@@ -58,7 +58,7 @@ public class studentReportCard {
 		System.out.println("Name: " + studentName);
 		System.out.println("-------------------------------------------------------");
 		System.out.println(" Subjects \t\t Marks");
-		System
+		System.out.println
 		
 	}
 
