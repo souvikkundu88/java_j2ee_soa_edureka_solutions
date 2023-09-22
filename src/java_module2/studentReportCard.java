@@ -58,7 +58,10 @@ public class studentReportCard {
 		System.out.println("Name: " + studentName);
 		System.out.println("-------------------------------------------------------");
 		System.out.println(" Subjects \t\t Marks");
-		System.out.println
+		int total = 0;
+		for (int i = 0; i < marks.length; i++) {
+			Sca
+		}
 		
 	}
 
