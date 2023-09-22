@@ -40,25 +40,29 @@ public class studentReportCard {
 		marksEntry(marks); // method for marksEntry()
 		printReportCard(studentName, marks, numberOfSubjects); // method for printReportCard()
 	}
+	// collected student name, total number of subjects
+	// now, I have to collect each marks in each subject and store it in array marks
 	
-	/* method definition for getting marks from the user */
+	/* method definition for getting marks from the user and storing it in array marks */
 	static void marksEntry(int[] marks) {
 		for(int i = 0; i < marks.length; i++) {
 			Scanner scMarks = new Scanner(System.in);
-			System.out.println("Enter marks for subject- " +(i+1) + ": ");
-			marks[i] = scMarks.nextInt();
+			System.out.println("Enter marks for subject- " +(i+1) + ": "); // asking user to enter each marks
+			marks[i] = scMarks.nextInt(); // storing each marks in array marks
 			scMarks.close();
 		}
 	}
+	// collected each marks in each subject, stored it in array marks
+	// now, calculate total marks, average, and print the report card
 	
-	/* method definition for printing report card */
+	/* method definition for total, average, and printing report card */
 	static void printReportCard(String studentName, int[] marks, int numberOfSubjects) {
 		System.out.println("\n-----------------------------------------------------");
 		System.out.println("\t\tReport Card");
 		System.out.println("Name: " + studentName);
 		System.out.println("-------------------------------------------------------");
 		System.out.println(" Subjects \t\t Marks");
-		int total = 0;
+		int total = 0; // declaring int variable total to store total marks
 		for (int i = 0; i < marks.length; i++) {
 			System.out.println("Subject")
 		}
