@@ -49,6 +49,7 @@ class studentReportCard {
 			System.out.println("Enter marks for subject- " +(i+1) + ": "); // asking user to enter each marks
 			marks[i] = sc.nextInt(); // storing each marks in array marks
 		}
+		sc.close();
 	}
 	// collected each marks in each subject, stored it in array marks
 	// now, calculate total marks, average, and print the report card
