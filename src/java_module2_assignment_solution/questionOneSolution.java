@@ -25,27 +25,27 @@ public class questionOneSolution {
 		// declaring arrays
 		int[] employeeIDs = new int[5];
 		String[] employeeNames = new String[5];
-		int[] employeeSalaries = new int[5];
+		double[] employeeSalaries = new double[5];
 		employeeInformation(employeeIDs, employeeNames, employeeSalaries);
 		displaySalaryChart(employeeIDs, employeeNames, employeeSalaries);
 	}
 	// accept employee information from the user
-	static void employeeInformation(int[] employeeIDs, String[] employeeNames, int[] employeeSalaries) {
-		int i;
-		for(i=0; i<5; i++) {
-			
-			// input ID
-			System.out.println("Enter Employee ID: ");
-			employeeIDs[i] = sc.nextInt();
+	static void employeeInformation(int[] employeeIDs,String[] employeeNames, double[] employeeSalaries) {
+		
+		for(int i=0; i<5; i++) {
 			
 			// input name
 			System.out.println("Enter Employee Name: ");
 			employeeNames[i] = sc.nextLine();
+			
+			// input ID
+			System.out.println("Enter Employee ID: ");
+			employeeIDs[i] = sc.nextInt();
 			sc.nextLine();
 			
 			// input salary
 			System.out.println("Enter EmployeeSalary: ");
-			employeeSalaries[i] = sc.nextInt();
+			employeeSalaries[i] = sc.nextDouble();
 			sc.nextLine();
 			
 	 }
@@ -54,13 +54,12 @@ public class questionOneSolution {
 }
 	
 	// pass the arrays to a display function
-	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, int[] employeeSalaries) {
+	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
 		System.out.println("*************************************************");
-		System.out.println("ID \t\t\t\t Name \t\t\t\t Salary");
+		System.out.println("ID \t Name \t Salary");
 		System.out.println("*************************************************");
-		int j;
-		for(j=0; j < 5; j++) {
-			System.out.println(employeeIDs[j] + "\t\t\t\t" + employeeNames[j] + "\t\t\t\t" + employeeSalaries[j]);
+		for(int i=0; i < 5; i++) {
+			System.out.println(employeeIDs[i] + "\t\t" + employeeNames[i] + "\t\t" + employeeSalaries[i]);
 		}
 		System.out.println("*************************************************");
 	}
