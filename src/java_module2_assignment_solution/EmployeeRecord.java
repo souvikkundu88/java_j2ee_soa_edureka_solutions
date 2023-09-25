@@ -18,25 +18,17 @@ package java_module2_assignment_solution;
 
 import java.util.Scanner;
 
+
 public class EmployeeRecord {
 	
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		// declaring arrays
-		String name = "";
+		String searchName = "";
 		int[] employeeIDs = new int[5];
 		String[] employeeNames = new String[5];
 		double[] employeeSalaries = new double[5];
-		employeeInformation(employeeIDs, employeeNames, employeeSalaries);
-		displaySalaryChart(employeeIDs, employeeNames, employeeSalaries);
-		displayEmployeeNameAndID(employeeIDs, employeeNames);
-		displayEmployeeRecord(name, employeeIDs, employeeNames, employeeSalaries);
-	}
-	// accept employee information from the user
-	static void employeeInformation(int[] employeeIDs,String[] employeeNames, double[] employeeSalaries) {
-		
-		for(int i=0; i<5; i++) {
-			
+        for(int i=0; i<5; i++) {
 			// input ID
 			System.out.println("Enter Employee ID: ");
 			employeeIDs[i] = sc.nextInt();
@@ -50,11 +42,21 @@ public class EmployeeRecord {
 			System.out.println("Enter EmployeeSalary: ");
 			employeeSalaries[i] = sc.nextDouble();
 			sc.nextLine();
-			
-	 }
-	 
-	sc.close();
-}
+        }
+        sc.close();
+        
+		displaySalaryChart(employeeIDs, employeeNames, employeeSalaries);
+		displayEmployeeNameAndID(employeeIDs, employeeNames);
+		
+		// search employee record
+		System.out.println("Search employee name & record: ");
+		searchName = sc.nextLine();
+		for(int i=0; i<employeeNames.length; i++) {
+			if(searchName == employeeNames[i]) {
+				employeeSearch(searchName, employeeIDs, employeeNames, employeeSalaries);
+			}
+		}
+	}
 	
 	// pass the arrays to a display employee salary chart
 	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
@@ -79,9 +81,12 @@ public class EmployeeRecord {
 	}
 	
 	// search employee name and display his or her name, corresponding ID, and salary
-	static void displayEmployeeRecord(String name, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
-		name = sc.nextLine();
-		
-	}
+	static void employeeSearch(String SearchName, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {        
+		System.out.println("*******************************************");
+		System.out.println("ID \t\t Name \t\t Salary");
+		System.out.println("*******************************************");
+		System.out.println(employeeIDs + "\t\t" + employeeNames + "\t\t" + employeeSalaries);
+		System.out.println("*******************************************");
+   }
 	
 }
