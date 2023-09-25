@@ -23,21 +23,29 @@ public class questionOneSolution {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		// declaring arrays
-		String[] employeeNames = new String[5];
 		int[] employeeIDs = new int[5];
+		String[] employeeNames = new String[5];
 		int[] employeeSalaries = new int[5];
 		employeeInformation(employeeIDs, employeeNames, employeeSalaries);
+		displaySalaryChart(employeeIDs, employeeNames, employeeSalaries);
 	}
 	// accept employee information from the user
 	static void employeeInformation(int[] employeeIDs, String[] employeeNames, int[] employeeSalaries) {
 		int i;
-		for(i=0; i<5; i++)
+		for(i=0; i<5; i++) {
 			System.out.println("Enter Employee ID: ");
 			employeeIDs[i] = sc.nextInt();
 			System.out.println("Enter Employee Name: ");
 			employeeNames[i] = sc.nextLine();
 			System.out.println("Enter EmployeeSalary: ");
-			employeeSalaries[i] = sc.next
+			employeeSalaries[i] = sc.nextInt();
+	 }
+	 sc.close();
+  }
+	
+	// pass the arrays to a display function
+	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, int[] employeeSalaries) {
+		
 	}
-
+	
 }
