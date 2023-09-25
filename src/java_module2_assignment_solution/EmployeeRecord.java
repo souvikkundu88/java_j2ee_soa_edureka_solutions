@@ -18,23 +18,24 @@ package java_module2_assignment_solution;
 
 import java.util.Scanner;
 
-public class java_module2_solution {
+public class EmployeeRecord {
 	
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		// declaring arrays
+		String name = "";
 		int[] employeeIDs = new int[5];
 		String[] employeeNames = new String[5];
 		double[] employeeSalaries = new double[5];
 		employeeInformation(employeeIDs, employeeNames, employeeSalaries);
 		displaySalaryChart(employeeIDs, employeeNames, employeeSalaries);
+		displayEmployeeNameAndID(employeeIDs, employeeNames);
+		displayEmployeeRecord(name, employeeIDs, employeeNames, employeeSalaries);
 	}
 	// accept employee information from the user
 	static void employeeInformation(int[] employeeIDs,String[] employeeNames, double[] employeeSalaries) {
 		
 		for(int i=0; i<5; i++) {
-			
-			
 			
 			// input ID
 			System.out.println("Enter Employee ID: ");
@@ -55,15 +56,32 @@ public class java_module2_solution {
 	sc.close();
 }
 	
-	// pass the arrays to a display function
+	// pass the arrays to a display employee salary chart
 	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
 		System.out.println("*******************************************");
 		System.out.println("ID \t\t Name \t\t Salary");
 		System.out.println("*******************************************");
-		for(int i=0; i < 5; i++) {
+		for(int i=0; i<5; i++) {
 			System.out.println(employeeIDs[i] + "\t\t" + employeeNames[i] + "\t\t" + employeeSalaries[i]);
 		}
 		System.out.println("*******************************************");
+	}
+	
+	// pass the arrays to display employee ids and employee names
+	static void displayEmployeeNameAndID(int[] employeeIDs, String[] employeeNames) {
+		System.out.println("********************************");
+		System.out.println("ID \t\t Name");
+		System.out.println("********************************");
+		for(int i=0; i<5; i++) {
+			System.out.println(employeeIDs[i] + "\t\t" + employeeNames[i]);
+		}
+		System.out.println("********************************");
+	}
+	
+	// search employee name and display his or her name, corresponding ID, and salary
+	static void displayEmployeeRecord(String name, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
+		name = sc.nextLine();
+		
 	}
 	
 }
