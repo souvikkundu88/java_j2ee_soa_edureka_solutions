@@ -18,7 +18,7 @@ package java_module2_assignment_solution;
 
 import java.util.Scanner;
 
-public class questionOneSolution {
+public class java_module2_solution {
 	
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
@@ -34,14 +34,16 @@ public class questionOneSolution {
 		
 		for(int i=0; i<5; i++) {
 			
-			// input name
-			System.out.println("Enter Employee Name: ");
-			employeeNames[i] = sc.nextLine();
+			
 			
 			// input ID
 			System.out.println("Enter Employee ID: ");
 			employeeIDs[i] = sc.nextInt();
 			sc.nextLine();
+			
+			// input name
+			System.out.println("Enter Employee Name: ");
+			employeeNames[i] = sc.nextLine();
 			
 			// input salary
 			System.out.println("Enter EmployeeSalary: ");
@@ -55,13 +57,13 @@ public class questionOneSolution {
 	
 	// pass the arrays to a display function
 	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
-		System.out.println("*************************************************");
-		System.out.println("ID \t Name \t Salary");
-		System.out.println("*************************************************");
+		System.out.println("*******************************************");
+		System.out.println("ID \t\t Name \t\t Salary");
+		System.out.println("*******************************************");
 		for(int i=0; i < 5; i++) {
 			System.out.println(employeeIDs[i] + "\t\t" + employeeNames[i] + "\t\t" + employeeSalaries[i]);
 		}
-		System.out.println("*************************************************");
+		System.out.println("*******************************************");
 	}
 	
 }
