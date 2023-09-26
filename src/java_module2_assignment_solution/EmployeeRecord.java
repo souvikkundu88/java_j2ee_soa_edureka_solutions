@@ -15,9 +15,7 @@
           *************************************************
 */
 package java_module2_assignment_solution;
-
 import java.util.Scanner;
-
 
 public class EmployeeRecord {
 	
@@ -46,15 +44,8 @@ public class EmployeeRecord {
             
 		display(employeeIDs, employeeNames, employeeSalaries);
 		displayEmployeeNameAndID(employeeIDs, employeeNames);
-		
-		// search employee record
-		System.out.println("Search employee name & record: ");
-		searchName = sc.nextLine();
-		sc.close();
-		
+		employeeSearch(searchName, employeeIDs, employeeNames, employeeSalaries);
 	}
-	
-	
 	
 	// pass the arrays to a display employee salary chart
 	static void display(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
@@ -79,16 +70,22 @@ public class EmployeeRecord {
 	}
 	
 	// search employee name and display his or her name, corresponding ID, and salary
-	static void employeeSearch(String searchName, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {        
+	static void employeeSearch(String searchName, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) { 
+		
+		// search employee record
+		System.out.println("Search employee name & record: ");
+		searchName = sc.nextLine();
+		
 		System.out.println("*******************************************");
 		System.out.println("ID \t\t Name \t\t Salary");
 		System.out.println("*******************************************");
-		for(int i=0; i<5; i++) {
-			if(searchName == employeeNames[i]) {
+		for(int i=0; i < employeeNames.length; i++) {
+			if(searchName.equalsIgnoreCase(employeeNames[i])) { // search employee record & only display if it exists
 				System.out.println(employeeIDs[i] + "\t\t" + employeeNames[i] + "\t\t" + employeeSalaries[i]);
-			}	
+			} 
 		}
 		System.out.println("*******************************************");
+		sc.close();
    }
-	
 }
+
