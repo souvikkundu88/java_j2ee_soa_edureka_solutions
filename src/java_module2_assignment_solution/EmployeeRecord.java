@@ -50,17 +50,10 @@ public class EmployeeRecord {
 		// search employee record
 		System.out.println("Search employee name & record: ");
 		searchName = sc.nextLine();
-		for(int i=0; i<employeeNames.length; i++) {
-			if(searchName == employeeNames[i]) {
-				System.out.println("testing");
-				System.out.println(employeeIDs[i] + employeeNames[i] + employeeSalaries[i]);
-			}
-			else {
-				System.out.println("going to else block");
-			}
-		}
 		sc.close();
+		
 	}
+	
 	
 	
 	// pass the arrays to a display employee salary chart
