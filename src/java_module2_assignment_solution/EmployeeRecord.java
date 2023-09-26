@@ -43,9 +43,8 @@ public class EmployeeRecord {
 			employeeSalaries[i] = sc.nextDouble();
 			sc.nextLine();
         }
-        sc.close();
-        
-		displaySalaryChart(employeeIDs, employeeNames, employeeSalaries);
+            
+		display(employeeIDs, employeeNames, employeeSalaries);
 		displayEmployeeNameAndID(employeeIDs, employeeNames);
 		
 		// search employee record
@@ -53,13 +52,19 @@ public class EmployeeRecord {
 		searchName = sc.nextLine();
 		for(int i=0; i<employeeNames.length; i++) {
 			if(searchName == employeeNames[i]) {
-				employeeSearch(searchName, employeeIDs, employeeNames, employeeSalaries);
+				System.out.println("testing");
+				System.out.println(employeeIDs[i] + employeeNames[i] + employeeSalaries[i]);
+			}
+			else {
+				System.out.println("going to else block");
 			}
 		}
+		sc.close();
 	}
 	
+	
 	// pass the arrays to a display employee salary chart
-	static void displaySalaryChart(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
+	static void display(int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {
 		System.out.println("*******************************************");
 		System.out.println("ID \t\t Name \t\t Salary");
 		System.out.println("*******************************************");
@@ -81,11 +86,15 @@ public class EmployeeRecord {
 	}
 	
 	// search employee name and display his or her name, corresponding ID, and salary
-	static void employeeSearch(String SearchName, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {        
+	static void employeeSearch(String searchName, int[] employeeIDs, String[] employeeNames, double[] employeeSalaries) {        
 		System.out.println("*******************************************");
 		System.out.println("ID \t\t Name \t\t Salary");
 		System.out.println("*******************************************");
-		System.out.println(employeeIDs + "\t\t" + employeeNames + "\t\t" + employeeSalaries);
+		for(int i=0; i<5; i++) {
+			if(searchName == employeeNames[i]) {
+				System.out.println(employeeIDs[i] + "\t\t" + employeeNames[i] + "\t\t" + employeeSalaries[i]);
+			}	
+		}
 		System.out.println("*******************************************");
    }
 	
