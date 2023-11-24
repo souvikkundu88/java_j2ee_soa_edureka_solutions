@@ -1,45 +1,42 @@
 package java_module3_practice;
 import java.util.Scanner;
 
-class Car {
-	/*
-	public Car() {
-		System.out.println("base class");
-	}
-	*/
+class Car { // create parent class or base class Car
 	void display() {
-		System.out.println("generic cars");
+		System.out.println("Parent class / Base class = Car");
+	}
+}	
+
+class Mercedes extends Car { // creating child class or subclass from parent / base class Car
+	@Override
+	void display() {
+		System.out.println("Mercedes");
 	}
 }
 
-class Mercedes extends Car {
+class BMW extends Car { // creating child class / subclass from parent / base class Car
 	@Override
 	void display() {
-		System.out.println("This is a Mercedes car.");
-	}
-}
-
-class BMW extends Car {
-	@Override
-	void display() {
-		System.out.println("This is a BMW car");
+		System.out.println("BMW");
 	}
 }
 
 class PolymorphismExample {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the name of car:");
-		String carType = scanner.next();
-		Car car; // reference of base class
-		if (carType.equalsIgnoreCase("Merc")) {
-            car = new Mercedes(); // Creating object of Mercedes
-        } else if (carType.equalsIgnoreCase("Bmw")) {
-            car = new BMW(); // Creating object of BMW
-        } else {
-            car = new Car(); // Default Car object
-        }
-
-        car.display(); // Calls the display() method based on the object created (runtime polymorphism)
-    }
+	public static void main (String[] args) {
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Enter car name: ");
+		String carType = userInput.next();
+		Car car;
+		if(carType.equalsIgnoreCase("Mercedes")) {
+			car = new Mercedes();
+		} else if(carType.equalsIgnoreCase("BMW")) {
+			car = new BMW();
+		} else {
+			car = new Car();
+		}
+		
+		car.display();
+		userInput.close();
+	}
+	
 }
