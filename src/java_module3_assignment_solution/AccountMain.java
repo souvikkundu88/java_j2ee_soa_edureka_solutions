@@ -21,7 +21,7 @@ abstract class Account {
 
 /*********************/
 
-class SBAccount extends Account { // subclass - child class - savings bank account
+class SBAccount extends Account { // subclass - child class - savings bank account extends parent class Account
 	private final double interestRate = 0.04;
 	private final double minimumBalance = 1000; // define min balance for savings account
 	
@@ -31,12 +31,14 @@ class SBAccount extends Account { // subclass - child class - savings bank accou
 	}
 	
 	@Override
+	// deposit
 	public void deposit(double depositAmount) {
 		amount += depositAmount;
 		System.out.println("Amount deposited successfully. Current balance: " + amount);
 	}
 	
 	@Override
+	// withdraw
 	public void withdraw(double withdrawAmount) {
 		if((amount - withdrawAmount) <= minimumBalance) {
 			amount -= withdrawAmount;
@@ -47,4 +49,33 @@ class SBAccount extends Account { // subclass - child class - savings bank accou
 	}
 }
 
+class CurrentAccount extends Account { // subclass - child class Current Acount extends parent class Account
+	private final double minimumBalance = 5000;
+	
+	// constructor
+	public CurrentAccount(int accountNumber, String name, double amount) {
+		super(accountNumber, name, amount);
+	}
+	
+	@Override
+	// deposit
+	public void deposit(double depositAmount) {
+		amount += depositAmount;
+	}
+	
+	@Override
+	// withdraw
+	public void withdraw(double withdrawAmount) {
+		if((amount - withdrawAmount) <= minimumBalance) {
+			amount -= withdrawAmount;
+			System.out.println("Witdrawl was successful. Current balance: " + amount);
+		} else {
+			System.out.println("Insufficient balance. Withdrawl not possible.");
+		}
+	}
+}
 
+
+public class AccountMain {
+	
+}
