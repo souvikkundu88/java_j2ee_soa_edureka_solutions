@@ -33,6 +33,18 @@ class SBAccount extends Account { // subclass - child class - savings bank accou
 	@Override
 	public void deposit(double depositAmount) {
 		amount += depositAmount;
-		System.out.println("Amount deposited successfully");
+		System.out.println("Amount deposited successfully. Current balance: " + amount);
+	}
+	
+	@Override
+	public void withdraw(double withdrawAmount) {
+		if((amount - withdrawAmount) <= minimumBalance) {
+			amount -= withdrawAmount;
+			System.out.println("Amount withdrawn successfully. Current balance: " + amount);
+		} else {
+			System.out.println("Insufficient balance, withdrawl not possible.");
+		}
 	}
 }
+
+
