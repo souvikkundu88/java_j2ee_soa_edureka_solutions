@@ -5,7 +5,7 @@ abstract class Account {
 	// common properties
 	protected int accountNumber;
 	protected String name;
-	protected int amount;
+	protected double amount;
 	
 	// parameterized constructor
 	Account(int accountNumber, String name, double amount) {
@@ -13,4 +13,12 @@ abstract class Account {
 		this.name = name;
 		this.amount = amount;
 	}
+	
+	// abstract methods for deposit and withdraw
+	public abstract void deposit(double depositAmount);
+	public abstract void withdraw(double withdrawAmount);
 }
+
+/*********************/
+
+
