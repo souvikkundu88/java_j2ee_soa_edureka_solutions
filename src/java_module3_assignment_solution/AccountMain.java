@@ -23,7 +23,7 @@ abstract class Account {
 
 class SBAccount extends Account { // subclass - child class - savings bank account extends parent class Account
 	private final double interestRate = 0.04;
-	private final double minimumBalance = 1000; // define min balance for savings account
+	private final double minimumBalance = 1000; // define minimum balance for savings account
 	
 	// constructor
 	public SBAccount(int accountNumber, String name, double amount) {
@@ -75,7 +75,35 @@ class CurrentAccount extends Account { // subclass - child class Current Acount 
 	}
 }
 
-
+// main
 public class AccountMain {
-	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Account Type (1 for Savings Account, 2 for Current Account): ");
+		int accountType = scanner.nextInt();
+		
+		if(accountType == 1) {
+			System.out.println("Enter account number, name, and initial amount for savings account: ");
+			int accountNumber = scanner.nextInt();
+			String name = scanner.next();
+			double amount = scanner.nextDouble();
+			
+			Account sbAccount = new SBAccount(accountNumber, name, amount);
+			sbAccount.deposit(2000);
+			sbAccount.withdraw(100);
+			
+		} else if(accountType == 2) {
+			System.out.println("Enter account number, name, and initial amount for savings account: ");
+			int accountNumber = scanner.nextInt();
+			String name = scanner.next();
+			double amount = scanner.nextDouble();
+			
+			Account currentAccount = new CurrentAccount(accountNumber, name, amount);
+			currentAccount.deposit(6000);
+			currentAccount.withdraw(200);
+		} else {
+			System.out.println("Invalid account type");
+		}
+		scanner.close();
+	}
 }
