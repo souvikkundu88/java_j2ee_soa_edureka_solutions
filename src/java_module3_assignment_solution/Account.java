@@ -8,7 +8,7 @@ abstract class Account {
 	protected double amount;
 	
 	// parameterized constructor
-	Account(int accountNumber, String name, double amount) {
+	public Account(int accountNumber, String name, double amount) {
 		this.accountNumber = accountNumber;
 		this.name = name;
 		this.amount = amount;
@@ -21,4 +21,18 @@ abstract class Account {
 
 /*********************/
 
-
+class SBAccount extends Account { // subclass - child class - savings bank account
+	private final double interestRate = 0.04;
+	private final double minimumBalance = 1000; // define min balance for savings account
+	
+	// constructor
+	public SBAccount(int accountNumber, String name, double amount) {
+		super(accountNumber, name, amount);
+	}
+	
+	@Override
+	public void deposit(double depositAmount) {
+		amount += depositAmount;
+		System.out.println("Amount deposited successfully");
+	}
+}
